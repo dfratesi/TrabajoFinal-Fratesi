@@ -8,7 +8,7 @@ class CustomUser(AbstractUser):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(
-        CustomUser, verbose_name="Usuario", on_delete=models.CASCADE
+        CustomUser, verbose_name="Usuario", on_delete=models.CASCADE, related_name="profile"
     )
     phone = models.CharField("Telefono", max_length=20, null=True, blank=True)
     address = models.CharField("Direccion", max_length=200, null=True, blank=True)

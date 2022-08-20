@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
 from apps.libreria.views import home, AboutView
 
 urlpatterns = [
@@ -27,4 +29,4 @@ urlpatterns = [
     path("", home, name="index"),
     path("books/", include("apps.libreria.urls")),
     path("about/", AboutView.as_view(), name="about"),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
