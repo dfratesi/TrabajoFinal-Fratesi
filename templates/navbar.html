@@ -1,0 +1,67 @@
+{% url 'index' as index %}
+{% url 'libreria:book-list' as books %}
+{% url 'libreria:autores-list' as autores %}
+{% url 'libreria:generos-list' as generos %}
+{% url 'about' as about %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{% url 'index' %}">Libreria</a>
+  <button class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item {% if request.path == books %}active{% endif %}">
+        <a class="nav-link" href="{% url 'libreria:book-list' %}">
+          Libros
+          {% if request.path == books %}<span class="sr-only">(current)</span>{% endif %}
+        </a>
+      </li>
+      <li class="nav-item {% if request.path == autores %}active{% endif %}">
+        <a class="nav-link" href="{% url 'libreria:autores-list' %}">
+          Autores
+          {% if request.path == books %}<span class="sr-only">(current)</span>{% endif %}
+        </a>
+      </li>
+      <li class="nav-item {% if request.path == generos %}active{% endif %}">
+        <a class="nav-link" href="{% url 'libreria:generos-list' %}">
+          Géneros
+          {% if request.path == generos %}<span class="sr-only">(current)</span>{% endif %}
+        </a>
+      </li>
+      <li class="nav-item {% if request.path == about %}active{% endif %}">
+        <a class="nav-link" href="{% url 'about' %}">
+          Acerca de
+          {% if request.path == about %}<span class="sr-only">(current)</span>{% endif %}
+        </a>
+      </li>
+      {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+        </li>
+      {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'login' %}">Log In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+  <form class="form-inline"
+        action="{% url 'libreria:search-book' %}"
+        method="get">
+    <input class="form-control mr-sm-2"
+           type="search"
+           name="search"
+           placeholder="Buscar"
+           aria-label="Search"/>
+    <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
+  </form>
+</nav>
