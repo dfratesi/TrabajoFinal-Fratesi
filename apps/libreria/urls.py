@@ -18,7 +18,6 @@ app_name = "libreria"
 
 urlpatterns = [
     path("", BookListView.as_view(), name="book-list"),
-    # path("create/", book_create, name="create"),
     path("create/", BookCreateView.as_view(), name="create"),
     path("<int:pk>/", BookDetailView.as_view(), name="book-detail"),
     path("<int:pk>/edit/", BookUpdateView.as_view(), name="book-update"),

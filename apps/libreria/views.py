@@ -10,6 +10,7 @@ from .models import Book, Author, Genre
 from .forms import BookForm, AuthorForm, GenreForm, LanguageForm
 from django.db.models import Q
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def home(request):
@@ -18,7 +19,7 @@ def home(request):
     return render(request, "index.html", context=context)
 
 
-class BookListView(ListView):
+class BookListView(LoginRequiredMixin, ListView):
     model = Book
     context_object_name = "libros"
 
