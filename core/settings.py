@@ -39,7 +39,9 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    "crispy_forms",
+]
 
 LOCAL_APPS = [
     "apps.accounts",
@@ -131,5 +133,12 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# Template para crispy_forms
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
+# Modelo de usuario
 AUTH_USER_MODEL = "accounts.CustomUser"
+
+# redirect
+LOGIN_REDIRECT_URL = "index"
+LOGOUT_REDIRECT_URL = "index"
