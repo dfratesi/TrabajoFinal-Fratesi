@@ -24,6 +24,8 @@ class Book(models.Model):
 
     class Meta:
         ordering = ["title", "editorial"]
+        verbose_name = "Libro"
+        verbose_name_plural = "Libros"
 
 
 class Author(models.Model):
@@ -35,6 +37,7 @@ class Author(models.Model):
 
     class Meta:
         ordering = ["last_name", "first_name"]
+        verbose_name = "Autor"
         verbose_name_plural = "Autores"
 
     def fullname(self):
@@ -51,12 +54,20 @@ class Genre(models.Model):
         help_text="Ingresa un género de libro (ej. Ciencia Ficción, Misterio)",
     )
 
+    class Meta:
+        verbose_name = "Género"
+        verbose_name_plural = "Géneros"
+
     def __str__(self):
         return self.genre
 
 
 class Language(models.Model):
     language = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name = "Idioma"
+        verbose_name_plural = "Idiomas"
 
     def __str__(self):
         return self.language
