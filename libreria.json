@@ -1,0 +1,1022 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2022-08-20T12:39:00.201Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "damian profile",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2022-08-20T12:39:24.635Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "Castellano",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2022-08-20T12:39:33.854Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "Ingles",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2022-08-20T12:39:47.820Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "Humor",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2022-08-20T12:40:08.337Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Borges Jorge Luis",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2022-08-20T14:14:02.502Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "Ficción",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2022-08-20T14:14:40.222Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "Narrativa",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2022-08-20T14:14:46.213Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "Argentina",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2022-08-20T14:15:03.152Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "El Aleph",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2022-08-20T14:16:56.650Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "El Libro De Arena",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2022-08-20T14:18:01.281Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "El Libro De Arena",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Rese\\u00f1a\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2022-08-20T14:19:27.904Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "5",
+    "object_repr": "Investigación",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2022-08-20T14:19:40.925Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "3",
+    "object_repr": "Borges Cuenta Buenos Aires",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2022-08-20T14:35:03.020Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "6",
+    "object_repr": "Romántica",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2022-08-20T14:35:22.134Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Bonelli Florencia",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2022-08-20T14:38:58.765Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Allende Isabel",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2022-08-20T14:39:22.369Z",
+    "user": 1,
+    "content_type": 9,
+    "object_id": "7",
+    "object_repr": "Latinoamericana",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2022-08-20T14:41:28.694Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "5",
+    "object_repr": "Violeta",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Rese\\u00f1a\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2022-08-20T14:56:26.186Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Steel Danielle",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2022-08-20T15:04:41.638Z",
+    "user": 1,
+    "content_type": 11,
+    "object_id": "8",
+    "object_repr": "Vecinos",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 4,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 4,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 4,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 4,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 5,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 5,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 5,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 5,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 6,
+    "codename": "add_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 6,
+    "codename": "change_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 6,
+    "codename": "delete_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 6,
+    "codename": "view_customuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add Perfil",
+    "content_type": 7,
+    "codename": "add_userprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change Perfil",
+    "content_type": 7,
+    "codename": "change_userprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete Perfil",
+    "content_type": 7,
+    "codename": "delete_userprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view Perfil",
+    "content_type": 7,
+    "codename": "view_userprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add author",
+    "content_type": 8,
+    "codename": "add_author"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change author",
+    "content_type": 8,
+    "codename": "change_author"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete author",
+    "content_type": 8,
+    "codename": "delete_author"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view author",
+    "content_type": 8,
+    "codename": "view_author"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add genre",
+    "content_type": 9,
+    "codename": "add_genre"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change genre",
+    "content_type": 9,
+    "codename": "change_genre"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete genre",
+    "content_type": 9,
+    "codename": "delete_genre"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view genre",
+    "content_type": 9,
+    "codename": "view_genre"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add language",
+    "content_type": 10,
+    "codename": "add_language"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change language",
+    "content_type": 10,
+    "codename": "change_language"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete language",
+    "content_type": 10,
+    "codename": "delete_language"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view language",
+    "content_type": 10,
+    "codename": "view_language"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add book",
+    "content_type": 11,
+    "codename": "add_book"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change book",
+    "content_type": 11,
+    "codename": "change_book"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete book",
+    "content_type": 11,
+    "codename": "delete_book"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view book",
+    "content_type": 11,
+    "codename": "view_book"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "accounts",
+    "model": "customuser"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "accounts",
+    "model": "userprofile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "libreria",
+    "model": "author"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "libreria",
+    "model": "genre"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "libreria",
+    "model": "language"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "libreria",
+    "model": "book"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "f1ourfkusgcyk22qyiepnzvjgxg9kdm8",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hCGoUVcuvcMZIZBqRpISrsy3l2bdKHb_977LxVpXUpce57jJOqkQB1-N6b0yHUDcqd6azq1uswT603RO-360iQ_z7v7d1Col2-dHR5NcCwjoSVDo7D1Awk7YYArIGDCASwJScjBeRes92i8TwAWQb0_3uE3IA:1oPPCR:MG_fXps-6HZttheGJHXouS2DmquL2XU8BnfRjKHa8XA",
+    "expire_date": "2022-09-03T14:11:43.790Z"
+  }
+},
+{
+  "model": "accounts.customuser",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$ONlCsRsocl54QqYo2VEars$zBkDzwrqEgfpRioF8Ye4C1sbvC/dVPhBhplEtT+Kx/I=",
+    "last_login": "2022-08-20T14:11:43.748Z",
+    "is_superuser": true,
+    "username": "damian",
+    "first_name": "",
+    "last_name": "",
+    "email": "dfratesi@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-08-20T12:38:06.618Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.userprofile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "phone": "2804630037",
+    "address": "Mitre 1137",
+    "image": ""
+  }
+},
+{
+  "model": "libreria.book",
+  "pk": 1,
+  "fields": {
+    "title": "El Aleph",
+    "editorial": "Debolsillo",
+    "isbn": "9789875666481",
+    "price": 2599.0,
+    "language": 1,
+    "author": 1,
+    "resumen": "La mayoría de los cuentos reunidos en este libro pertenecen al género fantástico. Algunos surgieron a partir de crónicas policiales, de pinturas o simplemente de la visión de algún conventillo; otro explora el efecto que la inmortalidad causaría en los hombres; hay una glosa al Martín Fierro, sueños sobre la identidad personal y fantasías del tiempo.\r\nEl cuento 'El Aleph', publicado por primera vez en 1 945, aborda uno de los temas recurrentes en la literatura de Borges: el infinito. Porque en esa esfera resplandeciente confluyen de un modo asombroso todos los tiempos y todos los espacios.",
+    "genre": [
+      2,
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "libreria.book",
+  "pk": 2,
+  "fields": {
+    "title": "El Libro De Arena",
+    "editorial": "Sudamericana",
+    "isbn": "9789500756464",
+    "price": 2399.0,
+    "language": 1,
+    "author": 1,
+    "resumen": "",
+    "genre": [
+      2,
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "libreria.book",
+  "pk": 3,
+  "fields": {
+    "title": "Borges Cuenta Buenos Aires",
+    "editorial": "Emece",
+    "isbn": "9789500438025",
+    "price": 2630.0,
+    "language": 1,
+    "author": 1,
+    "resumen": "",
+    "genre": [
+      5
+    ]
+  }
+},
+{
+  "model": "libreria.book",
+  "pk": 4,
+  "fields": {
+    "title": "El Hechizo Del Agua",
+    "editorial": "Planeta",
+    "isbn": "9789504975847",
+    "price": 3780.0,
+    "language": 1,
+    "author": 2,
+    "resumen": "Brenda Gomez tiene una vida perfecta. Es una alumna destacada en la carrera de Ciencias Económicas, su novio es un joven ambicioso y con un gran futuro, sus amigas son leales, su familia la adora. Pero ella no es feliz. La domina un mundo interior complejo, plagado de sentimientos e ideas que oculta, porque la avergüenzan y la alejan del modelo que se impone seguir. De los secretos que esconde, uno la atormenta especialmente: ama a Diego Bertoni desde que tiene memoria; un amor extraño por varias razones, pero sobre todo un amor prohibido. ¿Quién soy yo en realidad? es la pregunta que Brenda jamás se formuló, y es, sin embargo, la que posee la llave para resolver los misterios que la definen, para acabar con la hipocresía que la condena a la infelicidad. ¿Reunirá el coraje para mirar en su interior y amar lo que realmente es? ¿Reunirá el valor para aceptar su amor por Diego y luchar por él?",
+    "genre": [
+      3,
+      6
+    ]
+  }
+},
+{
+  "model": "libreria.book",
+  "pk": 5,
+  "fields": {
+    "title": "Violeta",
+    "editorial": "Sudamericana",
+    "isbn": "9789500766647",
+    "price": 4449.0,
+    "language": 1,
+    "author": 3,
+    "resumen": "Violeta, la primera niña de una familia de cinco bulliciosos hermanos, viene al mundo un tormentoso día de 1920. Desde el principio su vida estará marcada por acontecimientos extraordinarios, pues todavía se sienten las ondas expansivas de la Gran Guerra cuando la gripe española llega a las orillas de su país sudamericano natal, casi en el momento exacto de su nacimiento. Gracias a la clarividencia del padre, la familia saldrá indemne de esta crisis para enfrentarse a una nueva, cuando la Gran Depresión altera la elegante vida urbana que Violeta ha conocido hasta ahora. Lo perderán todo y se verán obligados a retirarse a una región salvaje y remota del país. Allí Violeta alcanzará la mayoría de edad y tendrá su primer pretendiente... En una larga carta dirigida a una persona a la que ama por encima de todas las demás, Violeta rememora devastadores desengaños amorosos y romances apasionados, momentos de pobreza y también de prosperidad, pérdidas terribles e inmensas alegrías.",
+    "genre": [
+      2,
+      3,
+      7
+    ]
+  }
+},
+{
+  "model": "libreria.book",
+  "pk": 6,
+  "fields": {
+    "title": "Retrato En Sepia",
+    "editorial": "Debolsillo",
+    "isbn": "9789877254907",
+    "price": 2599.0,
+    "language": 1,
+    "author": 3,
+    "resumen": "En el Chile del siglo XIX, Aurora del Valle sufre un trauma brutal que borra de su mente los primeros cinco años de su vida. Criada por su ambiciosa abuela, Paulina del Valle, crece en un ambiente privilegiado, libre de muchas de las limitaciones que oprimen a las mujeres de su época pero atormentada por horribles pesadillas. Cuando debe afrontar la traición del hombre al que ama y la soledad, Aurora decide explorar el misterio de su pasado. Reseña: «Una epopeya de los grandes sentimientos: tragedia esperanzada, fábula moral, esbozo de una familia y apunte de un país. En definitiva, un gran libro.» Ramón Ventura, El Periódico",
+    "genre": [
+      2,
+      3,
+      7
+    ]
+  }
+},
+{
+  "model": "libreria.book",
+  "pk": 7,
+  "fields": {
+    "title": "Vecinos",
+    "editorial": "Plaza & Janes Editores",
+    "isbn": "9789506446369",
+    "price": 2999.0,
+    "language": 1,
+    "author": 4,
+    "resumen": "Meredith White era una de las actrices más populares de Hollywood, pero una tragedia personal interrumpió su carrera y la distanció de su familia. Durante los últimos quince años, ha vivido aislada del mundo en su mansión de San Francisco. Sin embargo, todo cambia cuando un terremoto devastador sacude la ciudad sumiéndola en el caos. Sin dudarlo un segundo, Meredith hospeda en su residencia, que ha quedado intacta, a sus vecinos. Todas y cada una de esas personas (un respetado doctor y su aterrada familia, una preciosa joven atrapada en una relación tóxica y un brillante pianista octogenario) traen consigo historias y secretos que, poco a poco, salen a la luz. Y también Meredith, gracias a la suspicacia de uno de sus nuevos amigos, descubre una verdad perturbadora sobre sí misma que dará un vuelco a su vida.",
+    "genre": [
+      2,
+      3,
+      6
+    ]
+  }
+},
+{
+  "model": "libreria.book",
+  "pk": 9,
+  "fields": {
+    "title": "Sangre Azul",
+    "editorial": "Plaza & Janes Editores",
+    "isbn": "9789506446215",
+    "price": 3299.0,
+    "language": 1,
+    "author": 4,
+    "resumen": "Londres, 1943. Las bombas caen sobre la ciudad y el rey y la reina deciden enviar a su hija menor a vivir en el campo con una familia de confianza. Tercera en la línea de sucesión al trono, Charlotte, de diecisiete años, acepta a regañadientes usar un nombre falso a su llegada a Yorkshire. Pronto, la joven princesa empieza a disfrutar de su nueva libertad y de su pasión por los caballos, y comienza a sentirse atraída por el hijo de sus protectores. Este romance prohibido da un giro trágico cuyo fruto es una niña que se queda huérfana y cuyo linaje nadie conoce. Pero cuando unas cartas salen a la luz algo cambia y, de un secreto guardado durante casi dos décadas, emerge una princesa perdida.",
+    "genre": [
+      2,
+      3,
+      6
+    ]
+  }
+},
+{
+  "model": "libreria.author",
+  "pk": 1,
+  "fields": {
+    "first_name": "Jorge Luis",
+    "last_name": "Borges",
+    "country": "Argentina"
+  }
+},
+{
+  "model": "libreria.author",
+  "pk": 2,
+  "fields": {
+    "first_name": "Florencia",
+    "last_name": "Bonelli",
+    "country": "Argentina"
+  }
+},
+{
+  "model": "libreria.author",
+  "pk": 3,
+  "fields": {
+    "first_name": "Isabel",
+    "last_name": "Allende",
+    "country": "Chile"
+  }
+},
+{
+  "model": "libreria.author",
+  "pk": 4,
+  "fields": {
+    "first_name": "Danielle",
+    "last_name": "Steel",
+    "country": "Estados Unidos"
+  }
+},
+{
+  "model": "libreria.genre",
+  "pk": 1,
+  "fields": {
+    "genre": "Humor"
+  }
+},
+{
+  "model": "libreria.genre",
+  "pk": 2,
+  "fields": {
+    "genre": "Ficción"
+  }
+},
+{
+  "model": "libreria.genre",
+  "pk": 3,
+  "fields": {
+    "genre": "Narrativa"
+  }
+},
+{
+  "model": "libreria.genre",
+  "pk": 4,
+  "fields": {
+    "genre": "Argentina"
+  }
+},
+{
+  "model": "libreria.genre",
+  "pk": 5,
+  "fields": {
+    "genre": "Investigación"
+  }
+},
+{
+  "model": "libreria.genre",
+  "pk": 6,
+  "fields": {
+    "genre": "Romántica"
+  }
+},
+{
+  "model": "libreria.genre",
+  "pk": 7,
+  "fields": {
+    "genre": "Latinoamericana"
+  }
+},
+{
+  "model": "libreria.language",
+  "pk": 1,
+  "fields": {
+    "language": "Castellano"
+  }
+},
+{
+  "model": "libreria.language",
+  "pk": 2,
+  "fields": {
+    "language": "Ingles"
+  }
+}
+]
