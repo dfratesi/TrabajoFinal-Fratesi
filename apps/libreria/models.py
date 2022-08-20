@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 
 class Book(models.Model):
     title = models.CharField("Título", max_length=50)
@@ -21,6 +21,12 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        """
+        Devuelve el URL de una instancia particular de un Producto
+        """
+        return reverse('libreria:book-detail', args=[self.id])
 
     class Meta:
         ordering = ["title", "editorial"]

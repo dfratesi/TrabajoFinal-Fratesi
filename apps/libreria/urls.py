@@ -1,6 +1,5 @@
 from django.urls import path
 from .views import (
-    libro_create,
     lista_autores,
     autor_create,
     autor_detail,
@@ -11,14 +10,18 @@ from .views import (
     idioma_create,
     BookListView,
     BookDetailView,
+    BookCreateView,
+    BookUpdateView,
 )
 
 app_name = "libreria"
 
 urlpatterns = [
     path("", BookListView.as_view(), name="book-list"),
-    path("create/", libro_create, name="create"),
+    # path("create/", book_create, name="create"),
+    path("create/", BookCreateView.as_view(), name="create"),
     path("<int:pk>/", BookDetailView.as_view(), name="book-detail"),
+    path("<int:pk>/edit/", BookUpdateView.as_view(), name="book-update"),
     path("search/", search_books, name="search-book"),
     path("autores/", lista_autores, name="autores-list"),
     path("autores/create/", autor_create, name="autor-create"),

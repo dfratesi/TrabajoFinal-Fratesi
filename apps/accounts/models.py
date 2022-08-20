@@ -18,8 +18,6 @@ class UserProfile(models.Model):
         return f"{self.user.username} profile"
 
     class Meta:
-        ordering = [
-            "user",
-        ]
+        ordering = ["user"]
         verbose_name_plural = "Perfiles"
         verbose_name = "Perfil"

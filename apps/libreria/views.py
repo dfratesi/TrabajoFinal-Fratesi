@@ -1,9 +1,15 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import ListView, DetailView
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    TemplateView,
+)
 from .models import Book, Author, Genre
 from .forms import BookForm, AuthorForm, GenreForm, LanguageForm
 from django.db.models import Q
-from django.views.generic import TemplateView
+from django.urls import reverse_lazy
 
 
 def home(request):
@@ -15,37 +21,29 @@ def home(request):
 class BookListView(ListView):
     model = Book
     context_object_name = "libros"
-    template_name = "libreria/libro_list.html"
 
 
-# def lista_libros(request):
-#    libros = Book.objects.all()
-#    context = {"libros": libros}
-#    return render(request, "libreria/libro_list.html", context=context)
+class BookCreateView(CreateView):
+    """Vista para agregar Libros"""
+
+    model = Book
+    form_class = BookForm
+    template_name_suffix = "_create_form"
+    success_url = reverse_lazy("libreria:book-list")
 
 
-def libro_create(request):
-    if request.method == "POST":
-        form = BookForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("index")
-    else:
-        form = BookForm()
-    context = {"form": form}
-    return render(request, "libreria/libro_create.html", context=context)
+class BookUpdateView(UpdateView):
+    """Vista para editar Libros"""
 
-
-# def book_detail(request, pk):
-#    """Detalle del libro"""
-#    libro = get_object_or_404(Book, pk=pk)
-#    return render(request, "libreria/libro_detail.html", {"libro": libro})
+    model = Book
+    form_class = BookForm
+    template_name_suffix = "_edit_form"
+    success_url = reverse_lazy("libreria:book-list")
 
 
 class BookDetailView(DetailView):
     model = Book
     context_object_name = "libro"
-    template_name = "libreria/libro_detail.html"
 
 
 def lista_autores(request):

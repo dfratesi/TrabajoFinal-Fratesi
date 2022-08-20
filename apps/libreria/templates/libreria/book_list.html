@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Lista de Libros
+{% endblock title %}
+{% block content %}
+    {% for libro in libros %}
+        <a href="{{ libro.get_absolute_url }}">{{ libro.title }}</a>
+    {% endfor %}
+{% endblock content %}
