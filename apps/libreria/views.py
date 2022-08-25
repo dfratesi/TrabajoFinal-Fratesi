@@ -12,7 +12,9 @@ from .forms import BookForm, AuthorForm, GenreForm, LanguageForm
 from django.db.models import Q
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import get_user_model
 
+User = get_user_model()
 
 def home(request):
     libros = Book.objects.all().order_by("-id")[:3]

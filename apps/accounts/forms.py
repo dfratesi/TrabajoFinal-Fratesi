@@ -9,6 +9,7 @@ class CustomUserCreationForm(UserCreationForm):
             "email",
             "username",
         )
+        help_texts = {k: "" for k in fields}
 
 
 class CustomUserChangeForm(UserChangeForm):
@@ -18,3 +19,4 @@ class CustomUserChangeForm(UserChangeForm):
             "email",
             "username",
         )
+        help_texts = {k: "" for k in fields}

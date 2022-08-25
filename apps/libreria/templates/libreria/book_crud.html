@@ -8,20 +8,22 @@
         <div class="row">
             <div class="col">
                 <h1>Lista de libros</h1>
-                <div class="btn-group" role="group" aria-label="links">
-                    <a href="{% url 'libreria:create' %}"
-                       type="button"
-                       class="btn btn-secondary">Agregar libro</a>
-                    <a href="{% url 'libreria:autor-create' %}"
-                       type="button"
-                       class="btn btn-secondary">Agregar autor</a>
-                    <a href="{% url 'libreria:genero-create' %}"
-                       type="button"
-                       class="btn btn-secondary">Agregar género</a>
-                    <a href="{% url 'libreria:idiomas-create' %}"
-                       type="button"
-                       class="btn btn-secondary">Agregar idioma</a>
-                </div>
+                {% if user.is_superuser %}
+                    <div class="btn-group" role="group" aria-label="links">
+                        <a href="{% url 'libreria:create' %}"
+                           type="button"
+                           class="btn btn-secondary">Agregar libro</a>
+                        <a href="{% url 'libreria:autor-create' %}"
+                           type="button"
+                           class="btn btn-secondary">Agregar autor</a>
+                        <a href="{% url 'libreria:genero-create' %}"
+                           type="button"
+                           class="btn btn-secondary">Agregar género</a>
+                        <a href="{% url 'libreria:idiomas-create' %}"
+                           type="button"
+                           class="btn btn-secondary">Agregar idioma</a>
+                    </div>
+                {% endif %}
                 <table class="table table-hover table-striped mt-3">
                     <thead>
                         <tr>
@@ -33,7 +35,7 @@
                             <th scope="col">Autor</th>
                             <th scope="col">Géneros</th>
                             <th scope="col">Tapa</th>
-                            <th scope="col" colspan="2" class="text-center">Opciones</th>
+                            {% if user.is_staff or user.is_superuser %}<th scope="col" colspan="2" class="text-center">Opciones</th>{% endif %}
                         </tr>
                     </thead>
                     <tbody>
@@ -57,12 +59,16 @@
                                          height="30%"/>
                                 </td>
                                 <td>
-                                    <a href="{% url 'libreria:book-update' pk=libro.pk %}"
-                                       class="btn btn-warning">Editar</a>
+                                    {% if user.is_staff %}
+                                        <a href="{% url 'libreria:book-update' pk=libro.pk %}"
+                                           class="btn btn-warning">Editar</a>
+                                    {% endif %}
                                 </td>
                                 <td>
-                                    <a href="{% url 'libreria:book-delete' pk=libro.pk %}"
-                                       class="btn btn-danger">Eliminar</a>
+                                    {% if user.is_superuser %}
+                                        <a href="{% url 'libreria:book-delete' pk=libro.pk %}"
+                                           class="btn btn-danger">Eliminar</a>
+                                    {% endif %}
                                 </td>
                             </tr>
                         {% endfor %}
