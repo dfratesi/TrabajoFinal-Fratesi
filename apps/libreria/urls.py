@@ -12,6 +12,8 @@ from .views import (
     BookDetailView,
     BookCreateView,
     BookUpdateView,
+    BookDeleteView,
+    BookCrudListView,
 )
 
 app_name = "libreria"
@@ -21,6 +23,8 @@ urlpatterns = [
     path("create/", BookCreateView.as_view(), name="create"),
     path("<int:pk>/", BookDetailView.as_view(), name="book-detail"),
     path("<int:pk>/edit/", BookUpdateView.as_view(), name="book-update"),
+    path("<int:pk>/delete/", BookDeleteView.as_view(), name="book-delete"),
+    path("crud/", BookCrudListView.as_view(), name="book-crud"),
     path("search/", search_books, name="search-book"),
     path("autores/", lista_autores, name="autores-list"),
     path("autores/create/", autor_create, name="autor-create"),

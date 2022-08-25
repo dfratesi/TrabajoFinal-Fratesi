@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 class Book(models.Model):
     title = models.CharField("Título", max_length=50)
     editorial = models.CharField("Editorial", max_length=50, null=True, blank=True)
@@ -17,7 +18,9 @@ class Book(models.Model):
         null=True,
         blank=True,
     )
-    image = models.ImageField("Tapa del libro", upload_to="books/", null=True, blank=True)
+    image = models.ImageField(
+        "Tapa del libro", upload_to="books/", null=True, blank=True
+    )
     resumen = models.TextField("Reseña", max_length=1000, null=True, blank=True)
 
     def __str__(self):
@@ -25,9 +28,9 @@ class Book(models.Model):
 
     def get_absolute_url(self):
         """
-        Devuelve el URL de una instancia particular de un Producto
+        Devuelve el URL de una instancia particular de un Libro
         """
-        return reverse('libreria:book-detail', args=[self.id])
+        return reverse("libreria:book-detail", args=[self.id])
 
     class Meta:
         ordering = ["title", "editorial"]

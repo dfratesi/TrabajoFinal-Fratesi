@@ -6,6 +6,7 @@
 {% block content %}
     <div class="container">
         <h2>Log In</h2>
+        <h3>Para acceder a esta seccion tienes que loguearte.</h3>
         <form method="post">
             {% csrf_token %}
             {{ form|crispy }}
