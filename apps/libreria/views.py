@@ -4,6 +4,7 @@ from django.views.generic import (
     DetailView,
     CreateView,
     UpdateView,
+    DeleteView,
     TemplateView,
 )
 from .models import Book, Author, Genre
@@ -19,7 +20,7 @@ def home(request):
     return render(request, "index.html", context=context)
 
 
-class BookListView(LoginRequiredMixin, ListView):
+class BookListView(ListView):
     model = Book
     context_object_name = "libros"
 
@@ -30,7 +31,7 @@ class BookCreateView(CreateView):
     model = Book
     form_class = BookForm
     template_name_suffix = "_create_form"
-    success_url = reverse_lazy("libreria:book-list")
+    success_url = reverse_lazy("libreria:book-crud")
 
 
 class BookUpdateView(UpdateView):
@@ -39,12 +40,24 @@ class BookUpdateView(UpdateView):
     model = Book
     form_class = BookForm
     template_name_suffix = "_edit_form"
-    success_url = reverse_lazy("libreria:book-list")
+    success_url = reverse_lazy("libreria:book-crud")
 
 
-class BookDetailView(DetailView):
+class BookDetailView(LoginRequiredMixin, DetailView):
     model = Book
     context_object_name = "libro"
+
+
+class BookDeleteView(DeleteView):
+    model = Book
+    context_object_name = "libro"
+    success_url = reverse_lazy("libreria:book-crud")
+
+
+class BookCrudListView(ListView):
+    model = Book
+    context_object_name = "libros"
+    template_name = "libreria/book_crud.html"
 
 
 def lista_autores(request):
