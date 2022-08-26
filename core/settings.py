@@ -41,6 +41,7 @@ DJANGO_APPS = [
 
 THIRD_PARTY_APPS = [
     "crispy_forms",
+    "debug_toolbar",
 ]
 
 LOCAL_APPS = [
@@ -58,6 +59,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "core.urls"
@@ -145,3 +147,9 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 # redirect
 LOGIN_REDIRECT_URL = "index"
 LOGOUT_REDIRECT_URL = "index"
+
+# Para django-debug-toolbar
+INTERNAL_IPS = [
+    "127.0.0.1",
+    "localhost",
+]
