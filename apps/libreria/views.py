@@ -25,6 +25,7 @@ def home(request):
 class BookListView(ListView):
     model = Book
     context_object_name = "libros"
+    queryset = Book.objects.all().prefetch_related("genre",).select_related("author")
 
 
 class BookCreateView(CreateView):
@@ -60,6 +61,7 @@ class BookCrudListView(ListView):
     model = Book
     context_object_name = "libros"
     template_name = "libreria/book_crud.html"
+    queryset = Book.objects.all().prefetch_related("genre",).select_related("author")
 
 
 def lista_autores(request):
