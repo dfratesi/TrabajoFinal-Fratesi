@@ -16,6 +16,7 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
+
 def home(request):
     libros = Book.objects.all().order_by("-id")[:3]
     context = {"libros": libros}
@@ -23,12 +24,20 @@ def home(request):
 
 
 class BookListView(ListView):
+    """Vista para ver la lista de libros"""
+
     model = Book
     context_object_name = "libros"
-    queryset = Book.objects.all().prefetch_related("genre",).select_related("author")
+    queryset = (
+        Book.objects.all()
+        .prefetch_related(
+            "genre",
+        )
+        .select_related("author")
+    )
 
 
-class BookCreateView(CreateView):
+class BookCreateView(LoginRequiredMixin, CreateView):
     """Vista para agregar Libros"""
 
     model = Book
@@ -37,7 +46,7 @@ class BookCreateView(CreateView):
     success_url = reverse_lazy("libreria:book-crud")
 
 
-class BookUpdateView(UpdateView):
+class BookUpdateView(LoginRequiredMixin, UpdateView):
     """Vista para editar Libros"""
 
     model = Book
@@ -47,21 +56,32 @@ class BookUpdateView(UpdateView):
 
 
 class BookDetailView(LoginRequiredMixin, DetailView):
+    """Vista para ver los detalles de una isntancia de
+    la clase Book"""
+
     model = Book
     context_object_name = "libro"
 
 
-class BookDeleteView(DeleteView):
+class BookDeleteView(LoginRequiredMixin, DeleteView):
+    """Vista para borrar un libro"""
+
     model = Book
     context_object_name = "libro"
     success_url = reverse_lazy("libreria:book-crud")
 
 
-class BookCrudListView(ListView):
+class BookCrudListView(LoginRequiredMixin, ListView):
     model = Book
     context_object_name = "libros"
     template_name = "libreria/book_crud.html"
-    queryset = Book.objects.all().prefetch_related("genre",).select_related("author")
+    queryset = (
+        Book.objects.all()
+        .prefetch_related(
+            "genre",
+        )
+        .select_related("author")
+    )
 
 
 def lista_autores(request):
