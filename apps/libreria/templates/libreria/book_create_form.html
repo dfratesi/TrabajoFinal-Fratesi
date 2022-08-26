@@ -4,16 +4,20 @@
     Agregar Libro
 {% endblock title %}
 {% block content %}
-    <div class="container mt-5">
-        {% if user.is_superuser %}
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <button type="submit" class="btn btn-success">Agregar Libro</button>
-            </form>
-        {% else %}
-            <h2>No tienes permisos suficientes para ingresar a esta sección.</h2>
-            <a href="{% url 'libreria:book-list' %}" class="btn btn-primary">Volver</a>
-        {% endif %}
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                {% if user.is_superuser %}
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit" class="btn btn-success">Agregar Libro</button>
+                    </form>
+                {% else %}
+                    <h2>No tienes permisos suficientes para ingresar a esta sección.</h2>
+                    <a href="{% url 'libreria:book-list' %}" class="btn btn-primary">Volver</a>
+                {% endif %}
+            </div>
+        </div>
     </div>
 {% endblock content %}
