@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import (
-    lista_autores,
+    AuthorListView,
     autor_create,
     autor_detail,
     lista_generos,
@@ -26,7 +26,7 @@ urlpatterns = [
     path("<int:pk>/delete/", BookDeleteView.as_view(), name="book-delete"),
     path("crud/", BookCrudListView.as_view(), name="book-crud"),
     path("search/", search_books, name="search-book"),
-    path("autores/", lista_autores, name="autores-list"),
+    path("autores/", AuthorListView.as_view(), name="autores-list"),
     path("autores/create/", autor_create, name="autor-create"),
     path("autores/<int:pk>/", autor_detail, name="autor-detail"),
     path("generos/", lista_generos, name="generos-list"),

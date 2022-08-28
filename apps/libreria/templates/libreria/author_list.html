@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Lista de Libros
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for autor in autores %}
+                <div class="col-md-4">
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ autor.fullname }}</h5>
+                            <p class="card-text">
+                                    {% lorem 20 w random %}.
+                            </p>
+                            <a class="btn btn-primary"
+                               href="{{ autor.get_absolute_url }}"
+                               role="button">Ver autor &#187</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}
