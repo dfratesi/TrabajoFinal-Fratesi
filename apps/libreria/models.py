@@ -56,6 +56,12 @@ class Author(models.Model):
     def __str__(self):
         return self.fullname()
 
+    def get_absolute_url(self):
+        """
+        Devuelve el URL de una instancia particular de un Libro
+        """
+        return reverse("libreria:autor-detail", args=[self.id])
+
 
 class Genre(models.Model):
     genre = models.CharField(
