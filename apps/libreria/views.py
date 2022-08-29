@@ -136,10 +136,11 @@ def search_books(request):
     search = request.GET["search"]
     libros = Book.objects.filter(
         Q(title__icontains=search)
-        | Q(autor__last_name__icontains=search)
-        | Q(genero__name__icontains=search)
+        #| Q(author__last_name__icontains=search)
+        #| Q(genre__genre__icontains=search)
     )
     context = {"libros": libros}
+    print(context)
     return render(request, "libreria/book_search.html", context=context)
 
 
