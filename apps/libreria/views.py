@@ -85,7 +85,7 @@ class BookCrudListView(LoginRequiredMixin, ListView):
 
 
 class AuthorListView(LoginRequiredMixin, ListView):
-    """Vista para ver lalista de autores"""
+    """Vista para ver la lista de autores"""
     model = Author
     context_object_name = "autores"
 
