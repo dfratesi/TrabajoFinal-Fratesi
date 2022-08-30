@@ -29,8 +29,8 @@ urlpatterns = [
     path("autores/", AuthorListView.as_view(), name="autores-list"),
     path("autores/create/", autor_create, name="autor-create"),
     path("autores/<int:pk>/", autor_detail, name="autor-detail"),
-    path("generos/", lista_generos, name="generos-list"),
-    path("generos/create/", genero_create, name="genero-create"),
-    path("generos/<int:pk>/", genero_detail, name="genero-detail"),
+    path("genres/", lista_generos, name="genre-list"),
+    path("genres/create/", genero_create, name="genre-create"),
+    path("genres/<int:pk>/", genero_detail, name="genre-detail"),
     path("idiomas/create/", idioma_create, name="idiomas-create"),
 ]

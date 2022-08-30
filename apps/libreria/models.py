@@ -73,9 +73,16 @@ class Genre(models.Model):
     class Meta:
         verbose_name = "Género"
         verbose_name_plural = "Géneros"
+        ordering = ["genre",]
 
     def __str__(self):
         return self.genre
+
+    def get_absolute_url(self):
+        """
+        Devuelve el URL de una instancia particular de un Libro
+        """
+        return reverse("libreria:genre-detail", args=[self.id])
 
 
 class Language(models.Model):
