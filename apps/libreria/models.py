@@ -60,7 +60,7 @@ class Author(models.Model):
         """
         Devuelve el URL de una instancia particular de un Libro
         """
-        return reverse("libreria:autor-detail", args=[self.id])
+        return reverse("libreria:author-detail", args=[self.id])
 
 
 class Genre(models.Model):

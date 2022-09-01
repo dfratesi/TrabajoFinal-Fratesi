@@ -86,8 +86,10 @@ class BookCrudListView(LoginRequiredMixin, ListView):
 
 class AuthorListView(LoginRequiredMixin, ListView):
     """Vista para ver la lista de autores"""
+
     model = Author
     context_object_name = "autores"
+
 
 def lista_autores(request):
     autores = Author.objects.all()
@@ -95,22 +97,42 @@ def lista_autores(request):
     return render(request, "libreria/autor_list.html", context=context)
 
 
-def autor_create(request):
-    if request.method == "POST":
-        form = AuthorForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("index")
-    else:
-        form = AuthorForm()
-    context = {"form": form}
-    return render(request, "libreria/autor_create.html", context=context)
+class AuthorCreateView(LoginRequiredMixin, CreateView):
+    """Vista para agregar Autores"""
+
+    model = Author
+    form_class = AuthorForm
+    template_name_suffix = "_create_form"
+    success_url = reverse_lazy("libreria:author-crud")
+
+
+class AuthorUpdateView(LoginRequiredMixin, UpdateView):
+    """Vista para editar Autores"""
+
+    model = Author
+    form_class = AuthorForm
+    template_name_suffix = "_edit_form"
+    success_url = reverse_lazy("libreria:author-crud")
 
 
 def autor_detail(request, pk):
     """Detalle del Autor"""
     autor = get_object_or_404(Author, pk=pk)
-    return render(request, "libreria/autor_detail.html", {"autor": autor})
+    return render(request, "libreria/author_detail.html", {"autor": autor})
+
+
+class AuthorDeleteView(LoginRequiredMixin, DeleteView):
+    """Vista para borrar un Autor"""
+
+    model = Author
+    context_object_name = "autor"
+    success_url = reverse_lazy("libreria:author-crud")
+
+
+class AuthorCrudListView(LoginRequiredMixin, ListView):
+    model = Author
+    context_object_name = "autores"
+    template_name = "libreria/author_crud.html"
 
 
 def lista_generos(request):
@@ -141,8 +163,8 @@ def search_books(request):
     search = request.GET["search"]
     libros = Book.objects.filter(
         Q(title__icontains=search)
-        #| Q(author__last_name__icontains=search)
-        #| Q(genre__genre__icontains=search)
+        # | Q(author__last_name__icontains=search)
+        # | Q(genre__genre__icontains=search)
     )
     context = {"libros": libros}
     print(context)

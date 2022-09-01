@@ -1,7 +1,10 @@
 from django.urls import path
 from .views import (
     AuthorListView,
-    autor_create,
+    AuthorCreateView,
+    AuthorUpdateView,
+    AuthorDeleteView,
+    AuthorCrudListView,
     autor_detail,
     lista_generos,
     genero_create,
@@ -28,10 +31,12 @@ urlpatterns = [
     path("crud/", BookCrudListView.as_view(), name="book-crud"),
     path("search/", search_books, name="search-book"),
     # URLs autores
-    path("author/", AuthorListView.as_view(), name="autores-list"),
-    path("author/create/", autor_create, name="autor-create"),
-    path("author/<int:pk>/", autor_detail, name="autor-detail"),
-    #path("author/crud/", autor_detail, name="autor-crud"),
+    path("author/", AuthorListView.as_view(), name="author-list"),
+    path("author/create/", AuthorCreateView.as_view(), name="author-create"),
+    path("author/<int:pk>/", autor_detail, name="author-detail"),
+    path("author/<int:pk>/create/", AuthorUpdateView.as_view(), name="author-update"),
+    path("author/<int:pk>/delete/", AuthorDeleteView.as_view(), name="author-delete"),
+    path("author/crud/", AuthorCrudListView.as_view(), name="author-crud"),
     # URLs generos
     path("genres/", lista_generos, name="genre-list"),
     path("genres/create/", genero_create, name="genre-create"),

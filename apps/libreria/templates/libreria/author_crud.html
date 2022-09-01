@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Lista de Libros
+{% endblock title %}
+{% block content %}
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <h1>Lista de libros</h1>
+                {% if user.is_superuser %}
+                    <div class="btn-group" role="group" aria-label="links">
+                        <a href="{% url 'libreria:author-create' %}"
+                           type="button"
+                           class="btn btn-secondary">Agregar autor</a>
+                    </div>
+                {% endif %}
+                <table class="table table-hover mt-3">
+                    <thead>
+                        <tr>
+                            <th scope="col">#ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Nombre completo</th>
+                            <th scope="col">Pais origen</th>
+                            <th scope="col" colspan="2" class="text-center">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for autor in autores %}
+                            <tr>
+                                <th scope="row">{{ autor.id }}</th>
+                                <td>{{ autor.first_name }}</td>
+                                <td>{{ autor.last_name }}</td>
+                                <td>
+                                    <a href="{% url 'libreria:author-detail' pk=autor.pk %}">{{ autor.fullname }}</a>
+                                </td>
+                                <td>{{ autor.country }}</td>
+                                <td>
+                                    {% if user.is_staff %}
+                                        <a href="{% url 'libreria:author-update' pk=autor.pk %}"
+                                           class="btn btn-warning">Editar</a>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if user.is_superuser %}
+                                        <a href="{% url 'libreria:author-delete' pk=autor.pk %}"
+                                           class="btn btn-danger">Eliminar</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
