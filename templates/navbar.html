@@ -71,7 +71,7 @@
             <i class="fa fa-user" aria-hidden="true"></i> {{ user.username }}
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Editar perfil</a>
+            <a class="dropdown-item" href="{{ user.profile.get_absolute_url }}">Ver perfil</a>
             <a class="dropdown-item" href="{% url 'logout' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a>
           </div>
         </li>

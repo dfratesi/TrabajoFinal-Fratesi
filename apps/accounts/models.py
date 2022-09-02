@@ -1,5 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.urls import reverse
+
 
 
 class CustomUser(AbstractUser):
@@ -19,6 +21,12 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return f"{self.user.username} profile"
+
+    def get_absolute_url(self):
+        """
+        Devuelve el URL de una instancia particular de un un perfil
+        """
+        return reverse("profile", args=[self.id])
 
     class Meta:
         ordering = ["user"]

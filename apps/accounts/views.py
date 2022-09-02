@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
+from django.views.generic import CreateView, DetailView
+from .models import UserProfile
 
 from .forms import CustomUserCreationForm
 
@@ -19,3 +20,8 @@ def show_profile(request):
         )
     else:
         return HttpResponse("You are not looged in")
+
+
+class UserProfileDetailView(DetailView):
+    model = UserProfile
+    context_object_name = "profile"
