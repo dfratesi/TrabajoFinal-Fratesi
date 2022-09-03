@@ -56,7 +56,7 @@
             <a class="dropdown-item" href="{% url 'libreria:author-crud' %}">CRUD Autores</a>
             {% if user.is_superuser %}
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/admin/"><i class="fa fa-folder" aria-hidden="true"></i> Admin Site</a>
+              <a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fa fa-folder" aria-hidden="true"></i> Admin Site</a>
             {% endif %}
           </div>
         </li>
