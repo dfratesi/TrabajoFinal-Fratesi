@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load static %}
 {% block title %}
     Lista de Libros
 {% endblock title %}
@@ -17,14 +16,8 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ libro.title }}</h5>
                             <h6 class="card-text">{{ libro.author }}</h6>
-                            <p class="card-text">
-                                {% if libro.resumen %}
-                                    {{ libro.resumen|truncatewords:22 }}
-                                {% else %}
-                                    {% lorem 20 w random %}.
-                                {% endif %}
-                            </p>
-                            <a class="btn btn-primary"
+                            <p class="card-text">$ {{ libro.price }}</p>
+                            <a class="btn btn-primary btn-block"
                                href="{{ libro.get_absolute_url }}"
                                role="button">Ver libro &#187</a>
                         </div>

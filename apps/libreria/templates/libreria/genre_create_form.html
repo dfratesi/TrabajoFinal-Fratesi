@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %}
+    Agregar Género
+{% endblock title %}
+{% block content %}
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-8 my-3">
+                {% if user.is_superuser %}
+                    <h3 class="mb-3">Agregar género</h3>
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit" class="btn btn-success">Agregar género</button>
+                        <a href="{% url 'libreria:genre-crud' %}" class="btn btn-primary">Cancelar</a>
+                    </form>
+                {% else %}
+                    <h2>No tienes permisos suficientes para ingresar a esta sección.</h2>
+                    <a href="{% url 'libreria:genre-crud' %}" class="btn btn-primary">Volver</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

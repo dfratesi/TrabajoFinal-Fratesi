@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    Lista de Generos
+{% endblock title %}
+{% block content %}
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <h1>Lista de Géneros</h1>
+                {% if user.is_superuser %}
+                    <div class="btn-group" role="group" aria-label="links">
+                        <a href="{% url 'libreria:genre-create' %}"
+                           type="button"
+                           class="btn btn-secondary">Agregar género</a>
+                    </div>
+                {% endif %}
+                <table class="table table-hover mt-3">
+                    <thead>
+                        <tr>
+                            <th scope="col">#ID</th>
+                            <th scope="col">Género</th>
+                            <th scope="col" colspan="2">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for genero in generos %}
+                            <tr>
+                                <th scope="row">{{ genero.id }}</th>
+                                <td>
+                                    <a href="{% url 'libreria:genre-detail' pk=genero.pk %}">{{ genero|title }}</a>
+                                </td>
+                                <td>
+                                    {% if user.is_staff %}
+                                        <a href="{% url 'libreria:genre-update' pk=genero.pk %}"
+                                           class="btn btn-warning">Editar</a>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    {% if user.is_superuser %}
+                                        <a href="{% url 'libreria:genre-delete' pk=genero.pk %}"
+                                           class="btn btn-danger">Eliminar</a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

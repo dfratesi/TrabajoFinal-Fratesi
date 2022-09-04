@@ -1,38 +1,13 @@
 {% extends "base.html" %}
 {% block title %}
-    {{ autor.fullname }}
+    {{ genero }}
 {% endblock title %}
 {% block content %}
     <div class="container my-5">
         <div class="row">
             <div class="col-md-12">
-                <h2>{{ autor.fullname }}</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4 class="card-title">Acerca del autor</h4>
-                                <p class="card-text">
-                                    <b>Nombre:</b> {{ autor.first_name }}
-                                </p>
-                                <p class="card-text">
-                                    <b>Apellido:</b> {{ autor.last_name }}
-                                </p>
-                                <p class="card-text">
-                                    <b>Nacionalidad:</b> {{ autor.country }}
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col-md-2">
-                                <p class="card-text">
-                                    <b> Biografia:</b>
-                                </p>
-                            </div>
-                            <div class="col-md-10">{% lorem 50 w random %}.</div>
-                        </div>
-                    </div>
-                </div>
+                <h2>Listado de libros del género: {{ genero }}</h2>
+                <p class="text-info">Cantidad de libros: {{ cantidad }}</p>
             </div>
         </div>
         <div class="row">

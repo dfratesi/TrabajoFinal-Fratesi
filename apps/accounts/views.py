@@ -25,3 +25,5 @@ def show_profile(request):
 class UserProfileDetailView(DetailView):
     model = UserProfile
     context_object_name = "profile"
+
+# TODO: editar la vista del perfil de usuario

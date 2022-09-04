@@ -1,11 +1,10 @@
 {% url 'index' as index %}
 {% url 'libreria:book-list' as books %}
-{% url 'libreria:book-crud' as book_crud %}
 {% url 'libreria:author-list' as author %}
 {% url 'libreria:genre-list' as genre %}
 {% url 'about' as about %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="{% url 'index' %}">Libreria</a>
+  <a class="navbar-brand" href="{% url 'index' %}">Libreria Trelew</a>
   <button class="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -29,12 +28,6 @@
           {% if request.path == books %}<span class="sr-only">(current)</span>{% endif %}
         </a>
       </li>
-      <li class="nav-item {% if request.path == genre %}active{% endif %}">
-        <a class="nav-link" href="{% url 'libreria:genre-list' %}">
-          Géneros
-          {% if request.path == genre %}<span class="sr-only">(current)</span>{% endif %}
-        </a>
-      </li>
       <li class="nav-item {% if request.path == about %}active{% endif %}">
         <a class="nav-link" href="{% url 'about' %}">
           Acerca de
@@ -51,9 +44,9 @@
             Administración
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item {% if request.path == book_crud %}active{% endif %}"
-               href="{% url 'libreria:book-crud' %}">CRUD Libros</a>
+            <a class="dropdown-item" href="{% url 'libreria:book-crud' %}">CRUD Libros</a>
             <a class="dropdown-item" href="{% url 'libreria:author-crud' %}">CRUD Autores</a>
+            <a class="dropdown-item" href="{% url 'libreria:genre-crud' %}">CRUD Géneros</a>
             {% if user.is_superuser %}
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fa fa-folder" aria-hidden="true"></i> Admin Site</a>

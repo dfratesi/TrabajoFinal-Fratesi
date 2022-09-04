@@ -52,7 +52,7 @@ class Author(models.Model):
         verbose_name_plural = "Autores"
 
     def fullname(self):
-        return f"{self.last_name} {self.first_name}"
+        return f"{self.first_name} {self.last_name}"
 
     def __str__(self):
         return self.fullname()
@@ -83,7 +83,7 @@ class Genre(models.Model):
 
     def get_absolute_url(self):
         """
-        Devuelve el URL de una instancia particular de un Libro
+        Devuelve el URL de una instancia particular de un Género
         """
         return reverse("libreria:genre-detail", args=[self.id])
 
@@ -96,7 +96,7 @@ class Language(models.Model):
         verbose_name_plural = "Idiomas"
 
     def __str__(self):
-        return self.languageç
+        return self.language
 
     def get_absolute_url(self):
         """
