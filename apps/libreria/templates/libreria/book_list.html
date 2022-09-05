@@ -5,7 +5,7 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            {% if libros is None %}<h2>No se han ingresado libros.</h2>{% endif %}
+            {% if libros.count == 0 %}<h2>No se han ingresado libros.</h2>{% endif %}
             {% for libro in libros %}
                 <div class="col-md-4">
                     <div class="card my-3">
