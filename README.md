@@ -10,7 +10,7 @@
 
 ## Equipo
 
-@dfratesi Damián Fratesi :man_shrugging:
+@github/dfratesi Damián Fratesi :man_shrugging:
 
 ## Instalación en Linux
 
