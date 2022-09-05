@@ -1,33 +1,45 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}
     {{ profile.user.username }}
 {% endblock title %}
 {% block content %}
-    <div class="container">
-        <div class="card mt-3 w-auto">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="{{ profile.image }}"
-                         alt="{{ profile.user.username }}"
-                         width="100%"
-                         height="100%"/>
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ profile.phone }}</h5>
-                        <p class="card-text">
-                            {% if profile.resumen %}
-                                {{ profile.address }}
-                            {% else %}
-                                {% lorem 200 w random %}.
-                            {% endif %}
-                        </p>
-                        <p class="card-text">
-                            <small class="text-muted">Precio: ${{ profile.fullname }}</small>
-                        </p>
+    <div class="container my-5">
+        {% if profile.user.username == user.username %}
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Usuario: {{ profile.user.username }}</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>
+                                        {% if profile.image %}
+                                            <img src="{{ profile.image.url }}"
+                                                 alt="{{ profile.user.username }}"
+                                                 width="auto"
+                                                 height="100px"/>
+                                        {% else %}
+                                            <span class="text-danger">Sin Imagen</span>
+                                        {% endif %}
+                                    </p>
+                                    <h4 class="card-title">Datos del perfil</h4>
+                                    <p class="card-text">
+                                        <b>Teléfono:</b> {{ profile.phone }}
+                                    </p>
+                                    <p class="card-text">
+                                        <b>Dirección:</b> {{ profile.address }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        {% else %}
+            <div class="block bg-danger text-white h-auto my-5 p-5 text-center">
+                <h2>No tienes acceso. Solo puedes ver tu perfil</h2>
+            </div>
+        {% endif %}
     </div>
 {% endblock content %}

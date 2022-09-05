@@ -3,7 +3,6 @@ from django.db import models
 from django.urls import reverse
 
 
-
 class CustomUser(AbstractUser):
     pass
 
@@ -18,6 +17,7 @@ class UserProfile(models.Model):
     phone = models.CharField("Telefono", max_length=20, null=True, blank=True)
     address = models.CharField("Direccion", max_length=200, null=True, blank=True)
     image = models.ImageField(upload_to="profile_image/", null=True, blank=True)
+    # TODO: makemigrations and migrate
 
     def __str__(self):
         return f"{self.user.username} profile"
