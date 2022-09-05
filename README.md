@@ -10,7 +10,7 @@
 
 ## Equipo
 
-@github/dfratesi Damián Fratesi :man_shrugging:
+@dfratesi Damián Fratesi :man_shrugging:
 
 ## Instalación en Linux
 
@@ -45,7 +45,6 @@
     ```python
     ./manage.py createsuperuser
     ```
-
 
 6. Ejecutar el servidor
 

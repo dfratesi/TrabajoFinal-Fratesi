@@ -20,7 +20,10 @@
                                                  width="auto"
                                                  height="100px"/>
                                         {% else %}
-                                            <span class="text-danger">Sin Imagen</span>
+                                            <img src="{% static 'images/blank-profile-picture.png' %}"
+                                                 alt="Sin imagen"
+                                                 width="auto"
+                                                 height="100x"/>
                                         {% endif %}
                                     </p>
                                     <h4 class="card-title">Datos del perfil</h4>

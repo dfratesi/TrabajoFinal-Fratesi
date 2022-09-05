@@ -19,17 +19,22 @@ from django.conf.urls.static import static
 from django.conf import settings
 from apps.libreria.views import home, AboutView
 
-urlpatterns = [
-    # Django admin
-    path("admin/", admin.site.urls),
-    # Usuarios
-    path("accounts/", include("django.contrib.auth.urls")),
-    # Apps locales
-    path("accounts/", include("apps.accounts.urls")),
-    path("", home, name="index"),
-    path("books/", include("apps.libreria.urls")),
-    path("about/", AboutView.as_view(), name="about"),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns = (
+    [
+        # Django admin
+        path("admin/", admin.site.urls),
+        # Usuarios
+        path("accounts/", include("django.contrib.auth.urls")),
+        # Apps locales
+        path("accounts/", include("apps.accounts.urls")),
+        path("", home, name="index"),
+        path("books/", include("apps.libreria.urls")),
+        path("about/", AboutView.as_view(), name="about"),
+    ]
+    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+)
+print(urlpatterns)
 
 if settings.DEBUG:
     import debug_toolbar
