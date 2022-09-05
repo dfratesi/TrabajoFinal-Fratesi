@@ -1,11 +1,10 @@
 {% url 'index' as index %}
 {% url 'libreria:book-list' as books %}
-{% url 'libreria:autores-list' as autores %}
-{% url 'libreria:genre-list' as generos %}
+{% url 'libreria:author-list' as author %}
+{% url 'libreria:genre-list' as genre %}
 {% url 'about' as about %}
-{% url 'libreria:book-crud' as book_crud %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="{% url 'index' %}">Libreria</a>
+  <a class="navbar-brand" href="{% url 'index' %}">Libreria Trelew</a>
   <button class="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -23,16 +22,10 @@
           {% if request.path == books %}<span class="sr-only">(current)</span>{% endif %}
         </a>
       </li>
-      <li class="nav-item {% if request.path == autores %}active{% endif %}">
-        <a class="nav-link" href="{% url 'libreria:autores-list' %}">
+      <li class="nav-item {% if request.path == author %}active{% endif %}">
+        <a class="nav-link" href="{% url 'libreria:author-list' %}">
           Autores
           {% if request.path == books %}<span class="sr-only">(current)</span>{% endif %}
-        </a>
-      </li>
-      <li class="nav-item {% if request.path == generos %}active{% endif %}">
-        <a class="nav-link" href="{% url 'libreria:genre-list' %}">
-          Géneros
-          {% if request.path == generos %}<span class="sr-only">(current)</span>{% endif %}
         </a>
       </li>
       <li class="nav-item {% if request.path == about %}active{% endif %}">
@@ -51,12 +44,12 @@
             Administración
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item {% if request.path == book_crud %}active{% endif %}"
-               href="{% url 'libreria:book-crud' %}">CRUD Libros</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="{% url 'libreria:book-crud' %}">CRUD Libros</a>
+            <a class="dropdown-item" href="{% url 'libreria:author-crud' %}">CRUD Autores</a>
+            <a class="dropdown-item" href="{% url 'libreria:genre-crud' %}">CRUD Géneros</a>
             {% if user.is_superuser %}
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/admin/"><i class="fa fa-folder" aria-hidden="true"></i> Admin Site</a>
+              <a class="dropdown-item" href="{% url 'admin:index' %}"><i class="fa fa-folder" aria-hidden="true"></i> Admin Site</a>
             {% endif %}
           </div>
         </li>
@@ -71,7 +64,9 @@
             <i class="fa fa-user" aria-hidden="true"></i> {{ user.username }}
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Editar perfil</a>
+            <a class="dropdown-item" href="{{ user.profile.get_absolute_url }}">Ver perfil</a>
+            <a class="dropdown-item"
+               href="{% url 'edit-profile' pk=user.profile.pk %}">Editar perfil</a>
             <a class="dropdown-item" href="{% url 'logout' %}"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a>
           </div>
         </li>
@@ -80,7 +75,7 @@
           <a class="nav-link" href="{% url 'login' %}">Log In</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+          <a class="nav-link" href="{% url 'signup' %}">Registrarse</a>
         </li>
       {% endif %}
     </ul>

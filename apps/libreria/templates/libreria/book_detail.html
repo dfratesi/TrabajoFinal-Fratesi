@@ -4,26 +4,27 @@
 {% endblock title %}
 {% block content %}
     <div class="container">
-        <div class="card mt-3 w-auto">
+        <div class="card my-5 w-auto">
             <div class="row no-gutters">
                 <div class="col-md-4">
                     <img src="{{ libro.image.url }}"
                          alt="{{ libro.title }}"
-                         width="100%"
-                         height="100%"/>
+                         width="auto"
+                         height="450px"/>
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">{{ libro.title }}</h5>
+                        <p class="card-text">Precio: ${{ libro.price }}</p>
+                        {% for genero in libro.genre.all %}
+                            <a href="{% url 'libreria:genre-detail' pk=genero.pk %}"><span class="badge badge-pill badge-primary mx-1">{{ genero }}</span></a>
+                        {% endfor %}
                         <p class="card-text">
                             {% if libro.resumen %}
                                 {{ libro.resumen }}
                             {% else %}
                                 {% lorem 200 w random %}.
                             {% endif %}
-                        </p>
-                        <p class="card-text">
-                            <small class="text-muted">Precio: ${{ libro.price }}</small>
                         </p>
                     </div>
                 </div>

@@ -1,9 +1,22 @@
 {% extends "base.html" %}
 {% block title %}
-    Lista de Libros
+    {{ genero }}
 {% endblock title %}
 {% block content %}
-    <div class="container">
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Listado de libros del género: {{ genero }}</h2>
+                <p class="text-info">Cantidad de libros: {{ cantidad }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>
+                    {% if aviso %}{{ aviso }}{% endif %}
+                </h3>
+            </div>
+        </div>
         <div class="row">
             {% for libro in libros %}
                 <div class="col-md-4">
@@ -16,8 +29,14 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ libro.title }}</h5>
                             <h6 class="card-text">{{ libro.author }}</h6>
-                            <p class="card-text">$ {{ libro.price }}</p>
-                            <a class="btn btn-primary btn-block"
+                            <p class="card-text">
+                                {% if libro.resumen %}
+                                    {{ libro.resumen|truncatewords:22 }}
+                                {% else %}
+                                    {% lorem 20 w random %}.
+                                {% endif %}
+                            </p>
+                            <a class="btn btn-primary"
                                href="{{ libro.get_absolute_url }}"
                                role="button">Ver libro &#187</a>
                         </div>

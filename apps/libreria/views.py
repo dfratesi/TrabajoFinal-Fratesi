@@ -37,6 +37,14 @@ class BookListView(ListView):
     )
 
 
+class BookDetailView(DetailView):
+    """Vista para ver los detalles de una instancia de
+    la clase Book"""
+
+    model = Book
+    context_object_name = "libro"
+
+
 class BookCreateView(LoginRequiredMixin, CreateView):
     """Vista para agregar Libros"""
 
@@ -53,14 +61,6 @@ class BookUpdateView(LoginRequiredMixin, UpdateView):
     form_class = BookForm
     template_name_suffix = "_edit_form"
     success_url = reverse_lazy("libreria:book-crud")
-
-
-class BookDetailView(LoginRequiredMixin, DetailView):
-    """Vista para ver los detalles de una isntancia de
-    la clase Book"""
-
-    model = Book
-    context_object_name = "libro"
 
 
 class BookDeleteView(LoginRequiredMixin, DeleteView):
@@ -84,65 +84,111 @@ class BookCrudListView(LoginRequiredMixin, ListView):
     )
 
 
-class AuthorListView(LoginRequiredMixin, ListView):
+class AuthorListView(ListView):
     """Vista para ver la lista de autores"""
+
     model = Author
     context_object_name = "autores"
 
-def lista_autores(request):
-    autores = Author.objects.all()
-    context = {"autores": autores}
-    return render(request, "libreria/autor_list.html", context=context)
 
-
-def autor_create(request):
-    if request.method == "POST":
-        form = AuthorForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("index")
-    else:
-        form = AuthorForm()
-    context = {"form": form}
-    return render(request, "libreria/autor_create.html", context=context)
-
-
-def autor_detail(request, pk):
-    """Detalle del Autor"""
+def author_detail(request, pk):
+    """Detalle del Autor y listado de sus libros"""
+    aviso = ""
     autor = get_object_or_404(Author, pk=pk)
-    return render(request, "libreria/autor_detail.html", {"autor": autor})
+    libros = Book.objects.filter(author=autor)
+    if libros.count() == 0:
+        aviso = "No hay libros de este autor."
+    context = {
+        "autor": autor,
+        "libros": libros,
+        "aviso": aviso,
+    }
+    print(libros)
+    return render(request, "libreria/author_detail.html", context)
 
 
-def lista_generos(request):
-    generos = Genre.objects.all()
-    context = {"generos": generos}
-    return render(request, "libreria/genero_list.html", context=context)
+class AuthorCreateView(LoginRequiredMixin, CreateView):
+    """Vista para agregar Autores"""
+
+    model = Author
+    form_class = AuthorForm
+    template_name_suffix = "_create_form"
+    success_url = reverse_lazy("libreria:author-crud")
 
 
-def genero_create(request):
-    if request.method == "POST":
-        form = GenreForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("index")
-    else:
-        form = GenreForm()
-    context = {"form": form}
-    return render(request, "libreria/genero_create.html", context=context)
+class AuthorUpdateView(LoginRequiredMixin, UpdateView):
+    """Vista para editar Autores"""
+
+    model = Author
+    form_class = AuthorForm
+    template_name_suffix = "_edit_form"
+    success_url = reverse_lazy("libreria:author-crud")
+
+
+class AuthorDeleteView(LoginRequiredMixin, DeleteView):
+    """Vista para borrar un Autor"""
+
+    model = Author
+    context_object_name = "autor"
+    success_url = reverse_lazy("libreria:author-crud")
+
+
+class AuthorCrudListView(LoginRequiredMixin, ListView):
+    model = Author
+    context_object_name = "autores"
+    template_name = "libreria/author_crud.html"
 
 
 def genero_detail(request, pk):
-    """Detalle del Autor"""
+    """Detalle del Género"""
     genero = get_object_or_404(Genre, pk=pk)
-    return render(request, "libreria/genero_detail.html", {"genero": genero})
+    libros = Book.objects.filter(genre=genero)
+    cantidad = libros.count()
+    context = {
+        "genero": genero,
+        "libros": libros,
+        "cantidad": cantidad,
+    }
+    return render(request, "libreria/genre_detail.html", context)
+
+
+class GenreCreateView(LoginRequiredMixin, CreateView):
+    """Vista para agregar Géneros"""
+
+    model = Genre
+    form_class = GenreForm
+    template_name_suffix = "_create_form"
+    success_url = reverse_lazy("libreria:genre-crud")
+
+
+class GenreUpdateView(LoginRequiredMixin, UpdateView):
+    """Vista para editar Géneros"""
+
+    model = Genre
+    form_class = GenreForm
+    template_name_suffix = "_edit_form"
+    success_url = reverse_lazy("libreria:genre-crud")
+
+
+class GenreDeleteView(LoginRequiredMixin, DeleteView):
+    """Vista para borrar un Género"""
+
+    model = Genre
+    context_object_name = "genero"
+    success_url = reverse_lazy("libreria:genre-crud")
+
+class GenreCrudListView(LoginRequiredMixin, ListView):
+    model = Genre
+    context_object_name = "generos"
+    template_name = "libreria/genre_crud.html"
 
 
 def search_books(request):
     search = request.GET["search"]
     libros = Book.objects.filter(
         Q(title__icontains=search)
-        #| Q(author__last_name__icontains=search)
-        #| Q(genre__genre__icontains=search)
+        # | Q(author__last_name__icontains=search)
+        # | Q(genre__genre__icontains=search)
     )
     context = {"libros": libros}
     print(context)

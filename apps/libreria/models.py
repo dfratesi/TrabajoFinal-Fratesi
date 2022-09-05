@@ -17,6 +17,7 @@ class Book(models.Model):
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
+        related_name="author_books",
     )
     image = models.ImageField(
         "Tapa del libro", upload_to="books/", null=True, blank=True
@@ -51,7 +52,7 @@ class Author(models.Model):
         verbose_name_plural = "Autores"
 
     def fullname(self):
-        return f"{self.last_name} {self.first_name}"
+        return f"{self.first_name} {self.last_name}"
 
     def __str__(self):
         return self.fullname()
@@ -60,7 +61,7 @@ class Author(models.Model):
         """
         Devuelve el URL de una instancia particular de un Libro
         """
-        return reverse("libreria:autor-detail", args=[self.id])
+        return reverse("libreria:author-detail", args=[self.id])
 
 
 class Genre(models.Model):
@@ -73,14 +74,16 @@ class Genre(models.Model):
     class Meta:
         verbose_name = "Género"
         verbose_name_plural = "Géneros"
-        ordering = ["genre",]
+        ordering = [
+            "genre",
+        ]
 
     def __str__(self):
         return self.genre
 
     def get_absolute_url(self):
         """
-        Devuelve el URL de una instancia particular de un Libro
+        Devuelve el URL de una instancia particular de un Género
         """
         return reverse("libreria:genre-detail", args=[self.id])
 
@@ -94,3 +97,9 @@ class Language(models.Model):
 
     def __str__(self):
         return self.language
+
+    def get_absolute_url(self):
+        """
+        Devuelve el URL de una instancia particular de un Libro
+        """
+        return reverse("libreria:genre-detail", args=[self.id])
