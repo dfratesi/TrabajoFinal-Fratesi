@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="row mb-5">
-            {% if libros is None %}
+            {% if libros.count == 0 %}
                 <h2>Todavia no se han ingresado libros.</h2>
             {% else %}
                 {% for libro in libros %}
