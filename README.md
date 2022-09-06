@@ -58,9 +58,9 @@
 
 Hay tres usuarios con distintos niveles de acceso:
 
-* **User** pass: testpass123. Acceso a los detalles de los libros.
-* **Staff** pass: testpass123. Acceso a los detalles de los libros, y puede editar los modelos Books, Author, y Genre.
-* **Admin** pass: testpass123. Es superusuario. Ademas de lo que hace el Staff, puede crear y eliminar items de cada modelo.
+* **user** pass: testpass123. Acceso a los detalles de los libros.
+* **staff** pass: testpass123. Acceso a los detalles de los libros, y puede editar los modelos Books, Author, y Genre.
+* **admin** pass: testpass123. Es superusuario. Ademas de lo que hace el Staff, puede crear y eliminar items de cada modelo.
 
 ## Formulario de busqueda
 
