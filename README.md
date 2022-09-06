@@ -55,6 +55,11 @@
 ## Demo
 
 [mucho38.pythonanywhere.com](http://mucho38.pythonanywhere.com/)
+Hay tres usuarios con distintos niveles de acceso:
+
+* **User** pass: testpass123. Acceso a los detalles de los libros.
+* **Staff** pass: testpass123. Acceso a los detalles de los libros, y puede editar los modelos Books, Author, y Genre.
+* **Admin** pass: testpass123. Es superusuario. Ademas de lo que hace el Staff, puede crear y eliminar items de cada modelo.
 
 ## Formulario de busqueda
 
@@ -77,3 +82,8 @@ El formulario esta incluido en la nabvar. Hace la busqueda por el título del li
 | books/genre/create/ | Formulario para ingresar géneros literarios | Superusuario |
 | books/genre/_int_/ | Muestra los libros de un género en particular. Se reemplaza _int_ con el _id_ del género. | |
 | books/genre/crud/ | Alta, baja y modificacion de un autor | Staff |
+| accounts/signup/ | Registrar un usuario en el sitio |  |
+| accounts/login/ | Ingresar un usuario al sitio |  |
+| accounts/signup/ | Registrar un usuario en el sitio |  |
+| accounts/profile/ | Ver el perfil | Estar logueado |
+| accounts/profile/edit | Editar el perfil | Estar logueado |
