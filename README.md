@@ -54,20 +54,22 @@
 
 ## Formulario de busqueda
 
-El formulario esta incluido en la nabvar.
+El formulario esta incluido en la nabvar. Hace la busqueda por el título del libro.
 
 ## URLs
 
 | URL | Descripción | Permisos necesarios |
 | --- | --- | --- |
 | / | Home del sitio | |
+| admin/ | Sitio admin | Superusuario |
 | books/ | Listado de los libros | |
-| books/create/ | Formulario para cargar libros | superusuario |
+| books/create/ | Formulario para cargar libros | Superusuario |
 | books/_int_/ | Ver detalle de un libro. Se reemplaza _int_ con el _id_ del libro. | Estar logueado |
-| books/autores/ | Listado de los autores |
-| books/autores/create/ | Formulario para ingresar autores |
-| books/autores/_int_/ | Ver detalle de un autor. Se reemplaza _int_ con el _id_ del autor. |
-| books/generos/ | Listado de los géneros literarios |
-| books/generos/create/ | Formulario para ingresar géneros |
-| books/generos/_int_/ | Ver detalle de un género literario. Se reemplaza _int_ con el _id_ del género. |
-| books/idiomas/create/ | Formulario para ingresar idiomas |
+| books/crud/ | Alta, baja y modificacion de un libro | Staff |
+| books/author/ | Listado de los autores | |
+| books/author/create/ | Formulario para cargar un autor | Superusuario |
+| books/author/_int_/ | Ver detalle de un autor. Se reemplaza _int_ con el _id_ del autor. | |
+| books/author/crud/ | Alta, baja y modificacion de un autor | Staff |
+| books/genre/create/ | Formulario para ingresar géneros literarios | Superusuario |
+| books/genre/_int_/ | Muestra los libros de un género en particular. Se reemplaza _int_ con el _id_ del género. | |
+| books/genre/crud/ | Alta, baja y modificacion de un autor | Staff |
