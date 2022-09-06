@@ -14,10 +14,9 @@ class UserProfile(models.Model):
         on_delete=models.CASCADE,
         related_name="profile",
     )
-    phone = models.CharField("Telefono", max_length=20, null=True, blank=True)
-    address = models.CharField("Direccion", max_length=200, null=True, blank=True)
-    image = models.ImageField(upload_to="profile_image/", null=True, blank=True)
-    # TODO: makemigrations and migrate
+    phone = models.CharField("Teléfono", max_length=20, null=True, blank=True)
+    address = models.CharField("Dirección", max_length=200, null=True, blank=True)
+    image = models.ImageField("Imagen de perfil", upload_to="profile_image/", null=True, blank=True)
 
     def __str__(self):
         return f"{self.user.username} profile"
@@ -26,7 +25,7 @@ class UserProfile(models.Model):
         """
         Devuelve el URL de una instancia particular de un un perfil
         """
-        return reverse("profile", args=[self.id])
+        return reverse("profile")
 
     class Meta:
         ordering = ["user"]

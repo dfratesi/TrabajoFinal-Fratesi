@@ -21,6 +21,9 @@ class UserProfileDetailView(DetailView):
     model = UserProfile
     context_object_name = "profile"
 
+    def get_object(self, queryset=None):
+        return self.request.user.profile
+
 
 class UserProfileUpdateView(LoginRequiredMixin, UpdateView):
     """Vista para editar Perfil de usuario"""
@@ -29,3 +32,6 @@ class UserProfileUpdateView(LoginRequiredMixin, UpdateView):
     form_class = UserProfileForm
     template_name_suffix = "_edit_form"
     success_url = reverse_lazy("index")
+
+    def get_object(self, queryset=None):
+        return self.request.user.profile

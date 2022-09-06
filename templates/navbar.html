@@ -1,3 +1,4 @@
+{% load static %}
 {% url 'index' as index %}
 {% url 'libreria:book-list' as books %}
 {% url 'libreria:author-list' as author %}
@@ -61,12 +62,25 @@
              role="button"
              data-toggle="dropdown"
              aria-expanded="false">
-            <i class="fa fa-user text-white-50" aria-hidden="true"></i> {{ user.username }}
+            {% if user.profile.image %}
+              <img src="{{ user.profile.image.url }}"
+                   alt="{{ user.username }}"
+                   width="auto"
+                   height="22px"
+                   class="rounded-circle"/>
+            {% else %}
+              <img src="{% static 'images/blank-profile-picture.png' %}"
+                   alt="Sin imagen"
+                   width="auto"
+                   height="22px"
+                   class="rounded-circle"/>
+            {% endif %}
+            {{ user.username }}
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="{{ user.profile.get_absolute_url }}">Ver perfil</a>
+            <a class="dropdown-item" href="{{ user.profile.get_absolute_url }}"><i class="fa fa-user text-black-50 mr-2" aria-hidden="true"></i> Ver perfil</a>
             <a class="dropdown-item"
-               href="{% url 'edit-profile' pk=user.profile.pk %}"><i class="fa-solid fa-user-pen text-black-50"></i> Editar perfil</a>
+               href="{% url 'edit-profile' %}"><i class="fa-solid fa-user-pen text-black-50"></i> Editar perfil</a>
             <a class="dropdown-item" href="{% url 'logout' %}"><i class="fa-solid fa-arrow-right-from-bracket text-black-50"></i> Log Out</a>
           </div>
         </li>
