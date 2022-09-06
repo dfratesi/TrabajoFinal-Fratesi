@@ -177,6 +177,7 @@ class GenreDeleteView(LoginRequiredMixin, DeleteView):
     context_object_name = "genero"
     success_url = reverse_lazy("libreria:genre-crud")
 
+
 class GenreCrudListView(LoginRequiredMixin, ListView):
     model = Genre
     context_object_name = "generos"
@@ -190,7 +191,7 @@ def search_books(request):
         # | Q(author__last_name__icontains=search)
         # | Q(genre__genre__icontains=search)
     )
-    context = {"libros": libros}
+    context = {"libros": libros, "search": search}
     print(context)
     return render(request, "libreria/book_search.html", context=context)
 

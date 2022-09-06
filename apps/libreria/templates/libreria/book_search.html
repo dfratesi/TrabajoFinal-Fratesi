@@ -7,9 +7,13 @@
         <div class="row">
             {% if libros.count == 0 %}
                 <div class="my-5">
-                    <h2>No se han encontrado libros.</h2>
+                    <h2>No se han encontrado libros que coincidan con la busqueda..</h2>
                 </div>
             {% endif %}
+            <div>
+                <h2>Busqueda de: {{ search }}</h2>
+                <p>Se encontraron {{ libros.count }} libro/s.</p>
+            </div>
             {% for libro in libros %}
                 <div class="col-md-4">
                     <div class="card my-3">
