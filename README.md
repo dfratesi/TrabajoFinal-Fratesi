@@ -58,16 +58,16 @@ El formulario esta incluido en la nabvar.
 
 ## URLs
 
-| URL | Descripción |
-| --- | --- |
-| / | Home del sitio |
-| libros/ | Listado de los libros |
-| libros/create/ | Formulario para cargar libros |
-| libros/_int_/ | Ver detalle de un libro. Se reemplaza _int_ con el _id_ del libro. |
-| libros/autores/ | Listado de los autores |
-| libros/autores/create/ | Formulario para ingresar autores |
-| libros/autores/_int_/ | Ver detalle de un autor. Se reemplaza _int_ con el _id_ del autor. |
-| libros/generos/ | Listado de los géneros literarios |
-| libros/generos/create/ | Formulario para ingresar géneros |
-| libros/generos/_int_/ | Ver detalle de un género literario. Se reemplaza _int_ con el _id_ del género. |
-| libros/idiomas/create/ | Formulario para ingresar idiomas |
+| URL | Descripción | Permisos necesarios |
+| --- | --- | --- |
+| / | Home del sitio | |
+| books/ | Listado de los libros | |
+| books/create/ | Formulario para cargar libros | superusuario |
+| books/_int_/ | Ver detalle de un libro. Se reemplaza _int_ con el _id_ del libro. | Estar logueado |
+| books/autores/ | Listado de los autores |
+| books/autores/create/ | Formulario para ingresar autores |
+| books/autores/_int_/ | Ver detalle de un autor. Se reemplaza _int_ con el _id_ del autor. |
+| books/generos/ | Listado de los géneros literarios |
+| books/generos/create/ | Formulario para ingresar géneros |
+| books/generos/_int_/ | Ver detalle de un género literario. Se reemplaza _int_ con el _id_ del género. |
+| books/idiomas/create/ | Formulario para ingresar idiomas |
