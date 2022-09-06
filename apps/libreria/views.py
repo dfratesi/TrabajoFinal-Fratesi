@@ -37,7 +37,7 @@ class BookListView(ListView):
     )
 
 
-class BookDetailView(DetailView):
+class BookDetailView(LoginRequiredMixin, DetailView):
     """Vista para ver los detalles de una instancia de
     la clase Book"""
 
@@ -194,19 +194,6 @@ def search_books(request):
     context = {"libros": libros, "search": search}
     print(context)
     return render(request, "libreria/book_search.html", context=context)
-
-
-def idioma_create(request):
-    if request.method == "POST":
-        form = LanguageForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("index")
-    else:
-        form = LanguageForm()
-    context = {"form": form}
-    return render(request, "libreria/idioma_create.html", context=context)
-
 
 class AboutView(TemplateView):
     template_name = "about.html"

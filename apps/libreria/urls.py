@@ -18,7 +18,6 @@ from .views import (
     GenreDeleteView,
     GenreCrudListView,
     search_books,
-    idioma_create,
 )
 
 app_name = "libreria"
@@ -45,6 +44,4 @@ urlpatterns = [
     path("genre/<int:pk>/edit/", GenreUpdateView.as_view(), name="genre-update"),
     path("genre/<int:pk>/delete/", GenreDeleteView.as_view(), name="genre-delete"),
     path("genre/crud/", GenreCrudListView.as_view(), name="genre-crud"),
-    # URLs idiomas
-    path("idiomas/create/", idioma_create, name="idiomas-create"),
 ]

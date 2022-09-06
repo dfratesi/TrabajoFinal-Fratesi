@@ -32,3 +32,4 @@ class UserProfileForm(forms.ModelForm):
             "address",
             "image",
         )
+        help_texts = {k:'' for k in fields}
