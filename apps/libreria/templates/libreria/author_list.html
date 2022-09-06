@@ -6,21 +6,28 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            {% for autor in autores %}
-                <div class="col-md-4">
-                    <div class="card my-3">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ autor.fullname }}</h5>
-                            <p class="card-text">
-                                    {% lorem 20 w random %}.
-                            </p>
-                            <a class="btn btn-primary"
-                               href="{{ autor.get_absolute_url }}"
-                               role="button">Ver autor &#187</a>
+            <div class="col">
+                <h2 class="my-5">Lista de autores</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% if autores.count == 0 %}
+                <h3>Todavia no se han cargado autores.</h3>
+            {% else %}
+                {% for autor in autores %}
+                    <div class="col-md-4">
+                        <div class="card my-3">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ autor.fullname }}</h5>
+                                <p class="card-text">{% lorem 20 w random %}.</p>
+                                <a class="btn btn-primary"
+                                   href="{{ autor.get_absolute_url }}"
+                                   role="button">Ver autor &#187</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
 {% endblock content %}
