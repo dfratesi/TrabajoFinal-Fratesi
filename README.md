@@ -34,19 +34,25 @@
     pip install -r requirements.txt
     ```
 
-4. Cargar fixtures en la base de datos
+4. Migrar la base de datos
+
+    ```python
+    ./manage.py migrate
+    ```
+
+5. Cargar fixtures en la base de datos
 
     ```python
     ./manage.py loaddata libreria.json
     ```
 
-5. Crear superusuario
+6. Crear superusuario
 
     ```python
     ./manage.py createsuperuser
     ```
 
-6. Ejecutar el servidor
+7. Ejecutar el servidor
 
     ```python
     ./manage.py runserver
